@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1279.9999mm"
+   height="720mm"
+   viewBox="0 0 1279.9999 720"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="1279.9999"
+       height="720"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(550.20447,98.999982)">
+    <rect
+       style="fill:#ffffff;stroke-width:1.32292;stroke-miterlimit:4.3"
+       id="rect1"
+       width="155.67657"
+       height="93.111526"
+       x="10.672863"
+       y="70.293678" />
+    <rect
+       style="fill:#080808;fill-opacity:1;stroke-width:1.32292;stroke-miterlimit:4.3"
+       id="rect2"
+       width="1280"
+       height="720"
+       x="-550.20447"
+       y="-98.999985" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:228.35px;font-family:Consolas;-inkscape-font-specification:'Consolas, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#a40000;fill-opacity:1;stroke-width:95.1457;stroke-miterlimit:4.3"
+       x="-135.52141"
+       y="126.59869"
+       id="text2"
+       transform="scale(0.76115098,1.3137998)"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:228.35px;font-family:Consolas;-inkscape-font-specification:'Consolas, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#a40000;fill-opacity:1;stroke-width:95.1457"
+         x="-135.52141"
+         y="126.59869">GAME</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:228.35px;font-family:Consolas;-inkscape-font-specification:'Consolas, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#a40000;fill-opacity:1;stroke-width:95.1457;stroke-miterlimit:4.3"
+       x="-139.38957"
+       y="299.15637"
+       id="text3"
+       transform="scale(0.76115098,1.3137998)"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:228.35px;font-family:Consolas;-inkscape-font-specification:'Consolas, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#a40000;fill-opacity:1;stroke-width:95.1457"
+         x="-139.38957"
+         y="299.15637">OVER</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:94.5954px;font-family:Consolas;-inkscape-font-specification:'Consolas, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#5e58a9;fill-opacity:1;stroke-width:0.548;stroke-miterlimit:4.3;stroke-dasharray:none"
+       x="-207.92441"
+       y="472.33194"
+       id="text4"
+       transform="scale(0.90193495,1.1087274)"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:94.5954px;font-family:Consolas;-inkscape-font-specification:'Consolas, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#5e58a9;fill-opacity:1;stroke-width:0.548;stroke-dasharray:none"
+         x="-207.92441"
+         y="472.33194">Press Start </tspan></text>
+  </g>
+</svg>
