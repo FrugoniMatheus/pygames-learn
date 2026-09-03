@@ -1,37 +1,30 @@
 import pygame
-from classGame import GameObject, Player, Ball
+from classGame import GameObject, Player, Ball,ImageFade
+import resources
 
 pygame.init()
-pygame.font.init()
+display = pygame.display.set_mode(resources.RESOLUTION_GAME)
 
-fps = pygame.time.Clock()
-hit = pygame.mixer.Sound("assets/pong.wav")
-start = pygame.mixer.Sound("assets/start.wav")
-music_game = pygame.mixer.Sound("assets/music.ogg")
+pygame.font.init()
 font = pygame.font.Font(None, 50)
 
-display = pygame.display.set_mode((1280, 720))
+menu = GameObject(resources.IMG_MENU)
+campo = GameObject(resources.IMG_BG)
+gameOver = GameObject(resources.IMG_GAMEOVER)
 
-fade_img = pygame.Surface((1280,720)).convert_alpha() 
-#Imagem transparente
-fade = fade_img.get_rect()
-fade_img.fill("black")
-fade_alpha = 255
-
-
-menu = GameObject("assets/menu.png")
-campo = GameObject("assets/bg.png")
-gameOver = GameObject("assets/go.png")
-
-player1 = Player("assets/player1.png")
-player2 = Player("assets/player2.png", right=1280)
+player1 = Player(resources.IMG_PLAYER1)
+player2 = Player(resources.IMG_PLAYER2, right=1280)
 
 placar_player1 = font.render(str(player1.score), True, "white")
 placar_player2 = font.render(str(player2.score), True, "white")
 
-ball = Ball("assets/ball.png",center=(1280/2, 720/2) )
+ball = Ball(resources.IMG_BALL,center=(1280/2, 720/2) )
 
-music_game.play(-1)
+fade = ImageFade(resources.RESOLUTION_GAME)
+
+objects_draws = [campo, ball, player1, player2, fade]
+
+resources.GAME_SOUND.play(-1)
 cena = 1
 loop = True
 while loop:
@@ -39,9 +32,7 @@ while loop:
     match cena:
         case 1:
 
-            if fade_alpha >= 0:
-                fade_alpha -= 8
-                fade_img.set_alpha(fade_alpha)
+            fade.fadeAlpha()
 
             for event in pygame.event.get():
                     if event.type == pygame.QUIT:
@@ -49,17 +40,18 @@ while loop:
                     if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_RETURN:
                                  cena = 2
-                                 start.play()
-                                 fade_alpha = 255 
+                                 resources.START_SOUND.play()
+                                 fade.reset() 
                             if event.key == pygame.K_q:
                                  loop = False
 
             display.fill((0,0,0))
             menu.draw(display)
-            display.blit(fade_img, fade)
+            fade.draw(display)
          
         case 2:
-    
+
+            fade.fadeAlpha()
             player1.move()
             player2.move()
             ball.move()
@@ -82,7 +74,7 @@ while loop:
 
             if ball.rect.colliderect(player1.rect) or ball.rect.colliderect(player2.rect): 
                 ball.bounce_x()
-                hit.play()
+                resources.HIT_SOUND.play()
 
             if ball.rect.x <= 0:
                 player2.addPoint()
@@ -95,45 +87,37 @@ while loop:
 
             if player2.score >= 3:
                 cena = 3
-                fade_alpha = 255
+                fade.reset()
 
             display.fill((0,0,0))
         
-            campo.draw(display)
-            ball.draw(display)
+            for obj in objects_draws: 
+                 obj.draw(display)
 
             display.blit(placar_player1, (500,50))
-            player1.draw(display)
-        
             display.blit(placar_player2, (780,50))
-            player2.draw(display)
-                    
+
         case 3:
 
-            if fade_alpha >= 0:     
-                fade_alpha -= 8   
-                fade_img.set_alpha(fade_alpha)
+            fade.fadeAlpha()
     
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     loop = False
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN:
-                            player1.score = 0
+                            player1.reset()
                             placar_player1 = font.render(str(player1.score), True, "white")
-                            player2.score = 0
+                            player2.reset()
                             placar_player2 = font.render(str(player2.score), True, "white") 
-                            player1.y = 0
-                            player2.y = 0
-                            ball.x = 640
-                            ball.y = 320
+                            ball.reset()
+                            fade.reset()
                             cena = 1
-                            fade_alpha = 255
-
+                            
             display.fill((0,0,0))
             gameOver.draw(display)
-            display.blit(fade_img, fade)
+            fade.draw(display)
 
-    fps.tick(60)
+    resources.FPS.tick(60)
     pygame.display.flip()
 

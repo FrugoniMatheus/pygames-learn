@@ -25,9 +25,10 @@ class Player(GameObject):
         elif self.rect.y >= 720 - self.rect.height:
             self.rect.y = 720 - self.rect.height
 
-    def placarDraw(self, display, argsViewPlacar):
-        display.blit(self.placar, argsViewPlacar)
-        
+    def reset(self):
+        self.rect.y = 0
+        self.score = 0
+
     def addPoint(self):
         self.score += 1
 
@@ -52,3 +53,19 @@ class Ball(GameObject):
     def reset(self):
         self.rect.center = self.start_pos
         self.dir_x *= -1
+
+
+class ImageFade(GameObject): 
+    def __init__(self, resolution):
+        self.img = pygame.Surface(resolution).convert_alpha()
+        self.img.fill('black')
+        self.rect = self.img.get_rect()
+        self.alpha = 255
+
+    def fadeAlpha(self):
+        if self.alpha >= 0:
+            self.alpha -= 8
+            self.img.set_alpha(self.alpha)
+
+    def reset(self):
+        self.alpha = 255
